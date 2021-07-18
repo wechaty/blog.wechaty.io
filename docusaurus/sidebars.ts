@@ -339,6 +339,7 @@ const explainations = {
     'explainations/lifecycle',
     'explainations/alternatives',
     'explainations/glossary',
+    'explainations/software-development-kit',
     'explainations/faq',
     'explainations/troubleshooting',
     subMenu(docusaurus),
