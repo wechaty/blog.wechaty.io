@@ -1,11 +1,30 @@
 ---
-title: 'Managing contacts'
+title: 'Manage contacts'
 ---
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-## List all contacts
+Use the guide to help you integrate additional functions to an existing project which is present at [Github/Contact-Bot](https://github.com/wechaty/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/contact-bot.ts) or check that your existing local system will run on Wechaty. If, you wish to learn on how to build the bot on your own, please visit one of our [Building the bot](https://wechaty.js.org/docs/examples/basic/contact-bot#building-the-bot) section.
+
+The steps outlined here mainly focus on working with Javascript, but user are free to switch between any languages. All wechaty contacts are encapsulated as a Contact.
+
+## Prerequisites
+
+* Your system must have [Node.js](https://nodejs.org/en/download/package-manager/) installed (version >= 12).
+* Your system must have [Wechaty](https://github.com/wechaty/wechaty) (version >= 0.40).
+* You need to be familiar with the basics of Wechaty platform. If not, follow our [tutorials](https://wechaty.js.org/docs/tutorials/) section.
+* You need to have at least a minimal application ready to work, follow one of our [Example/Contact-Bot](https://wechaty.js.org/docs/examples/basic/contact-bot).
+
+### If you don't know where to start from
+
+See [Running our first ding-dong bot](https://wechaty.js.org/docs/getting-started/quick-start).
+
+The functions below require a basic script to help run the bot. Import the codes from [Github/Contact-Bot](https://github.com/wechaty/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/contact-bot.ts) for the basic script, and integrate the codes below.
+
+## All contacts - define how to list all contact
+
+This section help you list down all your contacts from the Instant messaging platform you choose to intergrate this bot by its `id`, `name` & `type`.
 
 <Tabs
   groupId="programming-languages"
@@ -48,7 +67,7 @@ bot.on('ready', onReady)
 <TabItem value="js">
 
 ```js
-const { Contact } from 'wechaty'
+const { Contact } = require('wechaty')
 
 async function onReady () {
   const contactList = await bot.Contact.findAll()
@@ -125,9 +144,12 @@ class MyBot(Wechaty):
 </TabItem>
 </Tabs>
 
-## Search in contacts
+The expected output of the JavaScript code is:
+![All contacts](../../static/img/docs/howto/contact/all-contact.png)
 
-`Contact.find` and `Contact.findAll` supports search by `id`, `name`, `alias`, `weixin`.
+## Search in contacts - define how to search within contacts
+
+This guide help you find your contact from the list of contacts from the Instant messaging platform you choose to intergrate this bot.
 
 <Tabs
   groupId="programming-languages"
@@ -169,6 +191,8 @@ bot.on('ready', onReady)
 <TabItem value="js">
 
 ```js
+const { Contact } = require('wechaty')
+
 async function onReady () {
   // find by id:
   const filehelper = await bot.Contact.find('filehelper')
@@ -253,3 +277,6 @@ class MyBot(Wechaty):
 
 </TabItem>
 </Tabs>
+
+The expected output of the JavaScript code is:
+![Contact Search](../../static/img/docs/howto/contact/contact-find.png)
