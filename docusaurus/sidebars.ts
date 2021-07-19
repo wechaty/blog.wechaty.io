@@ -18,18 +18,20 @@ const showcases: SubMenuData = {
   ],
 }
 
-const api: SubMenuData = {
-  label: 'API',
-  items: [
-    'api/overview',
-    'api/wechaty',
-    'api/message',
-    'api/contact',
-    'api/room',
-    'api/room-invitation',
-    'api/friendship',
+const wechatyapi: SubMenuData = {
+  label: 'wechaty-api',
+  items: [    
+    'api/wechaty-api/wechaty-api-overview',
+    'api/wechaty-api/classes',
+    'api/wechaty-api/typedefs',
+    'api/wechaty-api/wechaty-start',
+    'api/wechaty-api/wechaty-on',
+    'api/wechaty-api/wechaty-logout',
+    'api/wechaty-api/wechaty-logonoff',
+    'api/wechaty-api/wechaty-options',
+    'api/wechaty-api/wechaty-eventfunction',
   ],
-}
+} 
 
 const polyglot: SubMenuData = {
   label: 'Polyglot',
@@ -227,7 +229,7 @@ const introduction = {
  *
  *  Issue #704 - https://github.com/wechaty/wechaty.js.org/issues/704
  ****************************************************************************/
- const basic = {
+const basic = {
   label: 'Basic',
   items: [
     'examples/basic/the-worlds-shortest-chatbot-code-in-6-lines',
@@ -311,6 +313,19 @@ const howtos = {
     'howto/friendship',
     'howto/file-box',
     'howto/testing',
+  ],
+}
+
+const api: SubMenuData = {
+  label: 'API',
+  items: [
+    'api/overview',
+    subMenu(wechatyapi),
+    'api/message',
+    'api/contact',
+    'api/room',
+    'api/room-invitation',
+    'api/friendship',
   ],
 }
 
