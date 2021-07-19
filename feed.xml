@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://wechaty.js.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wechaty.js.org/" rel="alternate" type="text/html" /><updated>2021-07-19T16:37:00+00:00</updated><id>https://wechaty.js.org/feed.xml</id><title type="html">Wechaty</title><subtitle>Conversational RPA SDK for Chatbot Makers</subtitle><entry><title type="html">OSPP 2021-期初报告-基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善</title><link href="https://wechaty.js.org/2021/07/17/ospp-plan-wechaty-puppet-oa/" rel="alternate" type="text/html" title="OSPP 2021-期初报告-基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善" /><published>2021-07-17T00:00:00+00:00</published><updated>2021-07-17T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/17/ospp-plan-wechaty-puppet-oa</id><content type="html" xml:base="https://wechaty.js.org/2021/07/17/ospp-plan-wechaty-puppet-oa/">&lt;blockquote&gt;
+  &lt;p&gt;Author:&lt;a href=&quot;https://github.com/zzzyer&quot;&gt;@zzzyer&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;暑期2021&quot;&gt;暑期2021&lt;/h2&gt;
+
+&lt;p&gt;“开源软件供应链点亮计划-暑期2021”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。
+旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。
+根据项目的难易程度和完成情况，参与者还可获取“开源软件供应链点亮计划-暑期2021”活动奖金和奖杯。
+官网：&lt;a href=&quot;https://summer.iscas.ac.cn/&quot;&gt;https://summer.iscas.ac.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本项目 [基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善] 系 暑期2021 支持的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目介绍&quot;&gt;项目介绍&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;项目名称：基于 Wechaty Puppet Official Account 项目的用户与消息等基础功能的完善&lt;/li&gt;
+  &lt;li&gt;导师：吴京京&lt;/li&gt;
+  &lt;li&gt;学生：zzzyer&lt;/li&gt;
+  &lt;li&gt;模块列表
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;文本消息收发模块&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;图片消息收发模块&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;推送事件&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;项目链接：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/82&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/82&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;需求介绍&quot;&gt;需求介绍&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;申请开发专用测试公众账号&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;架设 &lt;a href=&quot;https://github.com/wechaty/wechaty-puppet-official-account/&quot;&gt;wechaty-puppet-official-account&lt;/a&gt; 并可以进行微信公众账号的正常文本消息收发&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对 Wechaty Puppet Official Account 的功能进行试用，分析其当前的功能，然后列出需要完善的功能列表，以及欠缺的功能列表，并作出开发计划。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在初期开发中，能够实现图片消息的接收和发送，即可完成原型验证 POC。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目开发时间计划&quot;&gt;项目开发时间计划&lt;/h2&gt;
+
+&lt;h3 id=&quot;时间20210701-20210721&quot;&gt;时间：2021.07.01-2021.07.21&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;申请微信公众平台测试账号&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;阅读Wechaty Puppet Official Account代码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;成功运行Wechaty Puppet Official Account相关样例（ding-dong-bot）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;与导师讨论得出要开发的功能模块&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;时间20210721-20210815&quot;&gt;时间：2021.07.21-2021.08.15&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;完成文本消息收发的功能完善&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;完成图片消息的简单收发&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;时间20210815-20210915&quot;&gt;时间：2021.08.15-2021.09.15&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;完善中期开发之前的功能模块&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;优化代码结构&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如有时间，可与导师商定对功能进行扩展&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>zzzyer</name></author><category term="project" /><category term="ospp" /><category term="puppet" /><category term="summer-of-wechaty" /><category term="summer-2021" /><category term="ecosystem" /><category term="ospp" /><category term="ospp-2021" /><category term="plan" /><summary type="html">Author:@zzzyer</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-puppet-oa/wechaty-puppet-official-account.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-puppet-oa/wechaty-puppet-official-account.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OSPP’21 first meeting for CLI &amp;amp; Matrix projects</title><link href="https://wechaty.js.org/2021/07/16/ospp-huan-first-meeting-cli-matrix/" rel="alternate" type="text/html" title="OSPP’21 first meeting for CLI &amp;amp; Matrix projects" /><published>2021-07-16T00:00:00+00:00</published><updated>2021-07-16T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/16/ospp-huan-first-meeting-cli-matrix</id><content type="html" xml:base="https://wechaty.js.org/2021/07/16/ospp-huan-first-meeting-cli-matrix/">&lt;h2 id=&quot;基于-matrix-appservice-wechaty-项目的用户群与消息等基础功能的完善-59&quot;&gt;基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善 #59&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://matrix.org/blog/index&quot;&gt;Matrix&lt;/a&gt; 是一个 open network for secure, decentralized communication, like &lt;a href=&quot;http://pidgin.im&quot;&gt;Pidgin&lt;/a&gt; on your Phone.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/wechaty/matrix-appservice-wechaty/&quot;&gt;matrix-appservice-wechaty&lt;/a&gt; 是一个 WeChat (微信) Matrix AppService for bridging the Matrix user with WeChat user.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It has been officially listed at &lt;a href=&quot;https://matrix.org/docs/projects/bridge/matrix-appservice-wechaty&quot;&gt;[Matrix] Bridge Page for Wechaty&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我们在本次 Summer 2021 的项目中，社区希望可以将我们的 &lt;a href=&quot;https://github.com/wechaty/matrix-appservice-wechaty/&quot;&gt;matrix-appservice-wechaty&lt;/a&gt; 项目进行继续完善，将它对用户、群、消息收发（包括文本、图片、视频等）的基础功能进行完善和支持。&lt;/p&gt;
+
+&lt;h2 id=&quot;基与-blessed-的-wechaty-命令行文本客户端软件仿irc-80&quot;&gt;基与 Blessed 的 Wechaty 命令行文本客户端软件（仿IRC） #80&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/chjj/blessed&quot;&gt;Blessed&lt;/a&gt; 是一个 curses-like library with a high-level terminal interface API for node.js. 基于 Blessed 能够快速的完成命令行文本节目的开发：&lt;/p&gt;
+
+&lt;p&gt;通过 &lt;a href=&quot;https://github.com/yaronn/blessed-contrib#readme&quot;&gt;blessed-contrib&lt;/a&gt; 可以快速的 Build dashboards (or any other application) using ASCII/ANSI art and javascript， 达到 Friendly to terminals, ssh, and developers. Extends blessed with custom drawille and other widgets 的使用效果。&lt;/p&gt;
+
+&lt;p&gt;我们在本次 Summer 2021 的项目中，Wechaty 希望可以实现对一个基于 Blessed 的 CLI 命令行文本客户端，通过 Wechaty 的基础支持，实现一个能够作为 WeChat, WeCom, Lark, Whatsapp 等所有 Wechaty 支持的 IM 的命令行文本客户端。&lt;/p&gt;
+
+&lt;h2 id=&quot;attendees&quot;&gt;Attendees&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Huan, mentor of &lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/80&quot;&gt;wechaty/summer-of-wechaty#80&lt;/a&gt; and &lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/59&quot;&gt;wechaty/summer-of-wechaty#59&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;刘靖，student of blessed-based wechaty-cli, &lt;a href=&quot;mailto:liuchinggg@gmail.com&quot;&gt;liuchinggg@gmail.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;林宇靖, student applying for Matrix AppService Wechaty, &lt;a href=&quot;mailto:545641826@qq.com&quot;&gt;545641826@qq.com&lt;/a&gt;, +8&lt;/li&gt;
+  &lt;li&gt;张瑞宁, student applying for Matrix AppService Wechaty, &lt;a href=&quot;mailto:3134191406@qq.com&quot;&gt;3134191406@qq.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;meeting-zoom-recording-playback&quot;&gt;Meeting zoom recording playback&lt;/h2&gt;
+
+&lt;div style=&quot;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/waFht2BeKb0&quot; allowfullscreen=&quot;&quot; webkitallowfullscreen=&quot;&quot; frameborder=&quot;0&quot; style=&quot;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    &quot;&gt;
+&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;0:00 [Huan] Meeting started&lt;/li&gt;
+  &lt;li&gt;4:00 [Jing LIU] Introducing &lt;a href=&quot;https://github.com/chinggg/wechaty-cli/&quot;&gt;https://github.com/chinggg/wechaty-cli/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;14:00 [Yujing LIN] Introduce the project progress of Matrix AppService Wechaty&lt;/li&gt;
+  &lt;li&gt;31:00 [Ruining ZHANG] learn how to configure the server &lt;a href=&quot;https://wechaty.js.org/2021/02/04/matrix-with-wechaty/&quot;&gt;https://wechaty.js.org/2021/02/04/matrix-with-wechaty/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;40:00 [Huan] Review &amp;amp; Introducing Wechaty Contributor Program&lt;/li&gt;
+  &lt;li&gt;54:00 Group photo&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1fVCk8qRYc4RKGMf2UY5HOe07hEhPUOpGC34v88GEFJg/edit#heading=h.c7zo1ifjarho&quot;&gt;Meeting Notes&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;关于开源软件供应链点亮计划暑期2021&quot;&gt;关于开源软件供应链点亮计划：暑期2021&lt;/h2&gt;
+
+&lt;p&gt;开源软件供应链点亮计划-暑期2021（以下简称 暑期2021）是由 中国科学院软件研究所 与 openEuler 社区 共同举办的一项面向高校学生的暑期活动，旨在鼓励在校学生积极参与开源软件的开发维护，促进优秀开源软件社区的蓬勃发展。该活动将联合各大开源社区，针对重要开源软件的开发与维护提供项目，并向全球高校学生开放报名。&lt;/p&gt;
+
+&lt;p&gt;学生可自主选择感兴趣的项目进行申请，并在中选后获得该软件资深维护者（社区导师）亲自指导的机会。根据项目的难易程度和完成情况，参与者还将获取 开源软件供应链点亮计划-暑期2021 活动奖杯和奖金。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;官网：&lt;a href=&quot;https://summer.iscas.ac.cn/&quot;&gt;https://summer.iscas.ac.cn/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Wechaty OSPP’21: &lt;a href=&quot;https://wechaty.js.org/docs/ospp/2021&quot;&gt;https://wechaty.js.org/docs/ospp/2021&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;关于-wechaty-社区&quot;&gt;关于 Wechaty 社区&lt;/h2&gt;
+
+&lt;p&gt;Wechaty 社区目前已经支持微信、Whatsapp、企业微信、飞书等常见流行即时通讯工具，并且能够通过多语言 SDK （比如 Python Wechaty） 进行调用。&lt;/p&gt;</content><author><name>huan</name></author><category term="ospp" /><category term="matrix" /><category term="summer-of-wechaty" /><category term="summer-2021" /><category term="ospp" /><category term="ospp-2021" /><category term="meeting" /><summary type="html">基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善 #59</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-huan-first-meeting-cli-matrix/group-photo.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-huan-first-meeting-cli-matrix/group-photo.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">开发支持电信运营商5G Chatbot/RCS的 Wechaty接入Puppet模块</title><link href="https://wechaty.js.org/2021/07/15/ospp-plan-5g-chatbot-puppet/" rel="alternate" type="text/html" title="开发支持电信运营商5G Chatbot/RCS的 Wechaty接入Puppet模块" /><published>2021-07-15T00:00:00+00:00</published><updated>2021-07-15T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/15/ospp-plan-5g-chatbot-puppet</id><content type="html" xml:base="https://wechaty.js.org/2021/07/15/ospp-plan-5g-chatbot-puppet/">&lt;blockquote&gt;
+  &lt;p&gt;Author: &lt;a href=&quot;https://github.com/zrn-fight&quot;&gt;@zrn-fight&lt;/a&gt;&lt;a href=&quot;https://github.com/sqcn&quot;&gt;@Sochy&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;暑期2021&quot;&gt;暑期2021&lt;/h2&gt;
+
+&lt;p&gt;“开源软件供应链点亮计划-暑期2021”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。 旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。 根据项目的难易程度和完成情况，参与者还可获取“开源软件供应链点亮计划-暑期2021”活动奖金和奖杯。&lt;/p&gt;
+
+&lt;p&gt;官网：&lt;a href=&quot;https://summer.iscas.ac.cn/#/homepage&quot;&gt;https://summer.iscas.ac.cn/#/homepage&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本项目 [开发支持电信运营商5G Chatbot/RCS的 Wechaty接入Puppet模块] 系暑期2021支持的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;开发支持电信运营商5g-chatbotrcs的-wechaty接入puppet模块&quot;&gt;开发支持电信运营商5G Chatbot/RCS的 Wechaty接入Puppet模块&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;导师：李佳芮,康嘉,李卓桓&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;学生：张瑞宁,邵琦&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;项目介绍：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/74&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/74&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;模块列表&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;使用5g Chatbot接口，把收发消息测通&lt;/li&gt;
+      &lt;li&gt;使用 &lt;a href=&quot;https://github.com/wechaty/wechaty-puppet-official-account&quot;&gt;https://github.com/wechaty/wechaty-puppet-official-account&lt;/a&gt; 项目作为模版，将其中的微信公众平台调用全部封装为RCS模块的调用&lt;/li&gt;
+      &lt;li&gt;发布 Git Repo wechaty-puppet-5g-msg，实现文本消息的发送和接收&lt;/li&gt;
+      &lt;li&gt;进行测试，完善项目文档&lt;/li&gt;
+      &lt;li&gt;配置 GitHub Actions 实现自动化测试（可选）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;计划安排：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;使用5g Chatbot接口，把收发消息测通
+        &lt;ul&gt;
+          &lt;li&gt;7/12 - 7/18&lt;/li&gt;
+          &lt;li&gt;配置好服务器，测通相关接口&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;使用 &lt;a href=&quot;https://github.com/wechaty/wechaty-puppet-official-account&quot;&gt;https://github.com/wechaty/wechaty-puppet-official-account&lt;/a&gt; 项目作为模版，将其中的微信公众平台调用全部封装为RCS模块的调用
+        &lt;ul&gt;
+          &lt;li&gt;7/19 - 8/10&lt;/li&gt;
+          &lt;li&gt;学习现有源码，学习RCS的相关知识。&lt;/li&gt;
+          &lt;li&gt;接入wechaty，进行代码整合，提高代码质量。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;项目中期总结
+        &lt;ul&gt;
+          &lt;li&gt;8/11 - 8/15&lt;/li&gt;
+          &lt;li&gt;实现阶段性目标，总结项目阶段性成果。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;发布 Git Repo wechaty-puppet-5g-msg，实现文本消息的发送和接收
+        &lt;ul&gt;
+          &lt;li&gt;8/16 - 8/31&lt;/li&gt;
+          &lt;li&gt;提供一个 examples/ding-dong-bot.ts ，完成“接收到文字消息ding时，自动回复消息dong”的功能&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;项目完善优化
+        &lt;ul&gt;
+          &lt;li&gt;9/1 - 9/15&lt;/li&gt;
+          &lt;li&gt;撰写整个项目过程的总结博客。配置 GitHub Actions 实现自动化测试，增加单元测试等。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;项目结项
+        &lt;ul&gt;
+          &lt;li&gt;9/16 - 9/30&lt;/li&gt;
+          &lt;li&gt;总结项目成果，项目经验，准备结项材料。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;联系方式：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;张瑞宁：3134191406@qq.com&lt;/li&gt;
+      &lt;li&gt;邵琦：shaoqichn@qq.com&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;分工合作:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;分工：张瑞宁同学需主要负责代码实现和gitlab项目维护，邵琦主要同学负责代码审查和gitlab项目维护。共同撰写中英文文档。&lt;/li&gt;
+      &lt;li&gt;津贴分配：邵琦同学：张瑞宁同学=1:1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>sqcn</name></author><category term="project" /><category term="ospp" /><category term="5g" /><category term="chatbot" /><category term="ecosystem" /><category term="summer-of-wechaty" /><category term="summer-2021" /><category term="ospp" /><category term="ospp-2021" /><category term="plan" /><summary type="html">Author: @zrn-fight@Sochy</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-plan-5g-chatbot-puppet/5g-chatbot-ospp.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-plan-5g-chatbot-puppet/5g-chatbot-ospp.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OSPP 2021-期初报告-基于 Blessed 的 Wechaty 命令行文本客户端软件</title><link href="https://wechaty.js.org/2021/07/14/ospp-plan-blessed-cli/" rel="alternate" type="text/html" title="OSPP 2021-期初报告-基于 Blessed 的 Wechaty 命令行文本客户端软件" /><published>2021-07-14T00:00:00+00:00</published><updated>2021-07-14T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/14/ospp-plan-blessed-cli</id><content type="html" xml:base="https://wechaty.js.org/2021/07/14/ospp-plan-blessed-cli/">&lt;blockquote&gt;
+  &lt;p&gt;Author:&lt;a href=&quot;https://github.com/chinggg&quot;&gt;@chinggg&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;暑期2021&quot;&gt;暑期2021&lt;/h2&gt;
+
+&lt;p&gt;「开源软件供应链点亮计划-暑期2021」（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动，旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。
+根据项目的难易程度和完成情况，参与者还可获取「开源软件供应链点亮计划-暑期2021」活动奖金和奖杯。
+官网：&lt;a href=&quot;https://summer.iscas.ac.cn/&quot;&gt;https://summer.iscas.ac.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本项目 [基于 Blessed 的 Wechaty 命令行文本客户端软件] 系 暑期2021 支持的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目介绍&quot;&gt;项目介绍&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;项目名称：基于 Blessed 的 Wechaty 命令行文本客户端软件&lt;/li&gt;
+  &lt;li&gt;导师：李卓桓&lt;/li&gt;
+  &lt;li&gt;学生：刘靖&lt;/li&gt;
+  &lt;li&gt;模块列表
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;所有消息的实时接收与展示&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;联系人与群聊列表的获取与展示&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;右侧群聊成员/联系人详情的展示&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;消息内容按来源存储与查看，联系人与群聊信息的缓存&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;未读新消息数量展示与联系人智能排序&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;私聊与群聊消息的发送&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;细粒度的联系人、群和对话管理&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;项目链接：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/81&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/81&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;详细方案&quot;&gt;详细方案&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;任务要求&lt;br /&gt;
+利用 &lt;a href=&quot;https://github.com/chjj/blessed&quot;&gt;Blessed&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/yaronn/blessed-contrib&quot;&gt;blesssed-contrib&lt;/a&gt; 提供的组件，仿照 Linux 命令行终端的 IRC 文本客户端，实现一个基于 Wechaty 的即时通讯客户端，通过 Wechaty 支持所有现有的 &lt;a href=&quot;https://wechaty.js.org/docs/puppet-providers/&quot;&gt;Wechaty Puppet Providers&lt;/a&gt;，比如微信、企业微信、飞书、Whatsapp 等。在初期开发中，能够实现文本消息的接收和发送，即可完成原型验证 POC 。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;实现方案&lt;br /&gt;
+学习 blessed 和 Wechaty 的使用，并研究 &lt;a href=&quot;https://github.com/huan/node-facenet/tree/master/src/manager/ui&quot;&gt;node-facenet&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/lekzd/console-tg-client&quot;&gt;console-tg-client&lt;/a&gt; 的架构设计，多和导师进行沟通，利用事件绑定或 RxJS 实现文本消息的收发功能和未读状态的提示，并提供一定的联系人和群对话管理功能，达到接近现有 IRC 客户端的完整程度。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;设计方案如下图所示：
+&lt;img src=&quot;/assets/2021/07-ospp-plan-blessed-cli/wechaty-cli-diagram.webp&quot; alt=&quot;diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;项目开发时间计划&quot;&gt;项目开发时间计划&lt;/h2&gt;
+
+&lt;h3 id=&quot;第一阶段71---814&quot;&gt;第一阶段（7.1 - 8.14）&lt;/h3&gt;
+
+&lt;p&gt;对接后端事件，选择恰当的架构与技术栈完成数据的存储、展示与更新。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;7.1 - 7.14
+自行探索做出 demo，实现简单的消息接收和联系人列表展示，与导师沟通架构设计和需使用的技术栈。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;7.15 - 7.29&lt;br /&gt;
+军训期间，时间有限，学习前端相关知识或抽空实现较简单的功能。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;8.1 - 8.14
+改进代码结构，重点推进数据的存储与状态的管理，实现消息内容按来源存储与查看，以及联系人与群聊信息的缓存，并撰写中期报告。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;第二阶段815---930&quot;&gt;第二阶段（8.15 - 9.30）&lt;/h3&gt;
+
+&lt;p&gt;重点完善前端交互，持续改进用户体验。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;8.15 - 8.30
+根据未读消息数量对联系人进行状态管理和智能排序，提供更多的交互选项和管理功能。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;9.1 - 9.14
+实现消息的发送&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;9.15 - 9.30
+完善文档，编写样例代码，如有需要还需编写测试。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;10月及以后
+继续维护并优化代码，实现新功能。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>chinggg</name></author><category term="project" /><category term="ospp" /><category term="summer-of-wechaty" /><category term="summer-2021" /><category term="ecosystem" /><category term="ospp" /><category term="ospp-2021" /><category term="plan" /><summary type="html">Author:@chinggg</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-plan-blessed-cli/wechaty-cli-logo.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-plan-blessed-cli/wechaty-cli-logo.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OSPP 2021-期初报告-基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善</title><link href="https://wechaty.js.org/2021/07/14/ospp-plan-wechaty-matrix/" rel="alternate" type="text/html" title="OSPP 2021-期初报告-基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善" /><published>2021-07-14T00:00:00+00:00</published><updated>2021-07-14T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/14/ospp-plan-wechaty-matrix</id><content type="html" xml:base="https://wechaty.js.org/2021/07/14/ospp-plan-wechaty-matrix/">&lt;blockquote&gt;
+  &lt;p&gt;Author:&lt;a href=&quot;https://github.com/545641826&quot;&gt;@Rhyme&lt;/a&gt; &lt;a href=&quot;https://github.com/zrn-fight&quot;&gt;@zrn-fight&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;暑期2021&quot;&gt;暑期2021&lt;/h2&gt;
+
+&lt;p&gt;“开源软件供应链点亮计划-暑期2021”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。 旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。 根据项目的难易程度和完成情况，参与者还可获取“开源软件供应链点亮计划-暑期2021”活动奖金和奖杯。&lt;/p&gt;
+
+&lt;p&gt;官网：&lt;a href=&quot;https://summer.iscas.ac.cn/#/homepage&quot;&gt;https://summer.iscas.ac.cn/#/homepage&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本项目 [基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善] 系暑期2021支持的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;基于-matrix-appservice-wechaty-项目的用户群与消息等基础功能的完善&quot;&gt;基于 Matrix AppService Wechaty 项目的用户、群与消息等基础功能的完善&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;导师：李卓桓，yswtrue&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;学生：林宇靖，张瑞宁&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;模块列表
+    &lt;ul&gt;
+      &lt;li&gt;架设一套自己的 Matrix 系统&lt;/li&gt;
+      &lt;li&gt;架设 &lt;a href=&quot;https://github.com/wechaty/matrix-appservice-wechaty/&quot;&gt;matrix-appservice-wechaty&lt;/a&gt; 并整合到 Matrix 系统中&lt;/li&gt;
+      &lt;li&gt;对 Matrix AppService Wechaty 的功能进行分析，然后列出需要完善的功能列表，以及欠缺的功能列表，并完成计划列表中的计划。 在初期开发中，实现图片消息的接收和发送，完成原型验证 POC&lt;/li&gt;
+      &lt;li&gt;进行测试，完善项目文档&lt;/li&gt;
+      &lt;li&gt;配置 GitHub Actions 实现自动化测试（可选）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;计划安排:
+    &lt;ul&gt;
+      &lt;li&gt;架设一套自己的 Matrix 系统
+        &lt;ul&gt;
+          &lt;li&gt;7/12 - 7/18&lt;/li&gt;
+          &lt;li&gt;配置好设置好matrix服务器，测通相关接口&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;架设 &lt;a href=&quot;https://github.com/wechaty/matrix-appservice-wechaty/&quot;&gt;matrix-appservice-wechaty&lt;/a&gt; 并整合到 Matrix 系统中
+        &lt;ul&gt;
+          &lt;li&gt;7/19 - 7/25&lt;/li&gt;
+          &lt;li&gt;学习现有源码，进行代码整合，提高代码质量&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;对 Matrix AppService Wechaty 的功能进行分析，然后列出需要完善的功能列表，以及欠缺的功能列表，并完成计划列表中的计划
+        &lt;ul&gt;
+          &lt;li&gt;7/26 - 8/1&lt;/li&gt;
+          &lt;li&gt;熟悉项目功能，根据仓库issue和实际代码列出需要完善的功能&lt;/li&gt;
+          &lt;li&gt;无&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;实现图片消息的接收和发送，完成原型验证 POC
+        &lt;ul&gt;
+          &lt;li&gt;8/2 - 8/8&lt;/li&gt;
+          &lt;li&gt;添加图片消息的接收和发送模块，使 Matrix AppService Wechaty支持图像消息&lt;/li&gt;
+          &lt;li&gt;无&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;项目中期总结
+        &lt;ul&gt;
+          &lt;li&gt;8/9 - 8/15&lt;/li&gt;
+          &lt;li&gt;实现阶段性目标，总结项目阶段性成果&lt;/li&gt;
+          &lt;li&gt;无&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;项目完善
+        &lt;ul&gt;
+          &lt;li&gt;8/16 - 8/31&lt;/li&gt;
+          &lt;li&gt;根据需要完善的功能列表完善群聊用户昵称显示，头像显示&lt;/li&gt;
+          &lt;li&gt;无&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;项目优化
+        &lt;ul&gt;
+          &lt;li&gt;9/1 - 9/15&lt;/li&gt;
+          &lt;li&gt;添加完善中英文。撰写整个项目过程的总结文章。配置 GitHub Actions 实现自动化测试，增加单元测试等&lt;/li&gt;
+          &lt;li&gt;无&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;项目结项
+        &lt;ul&gt;
+          &lt;li&gt;9/16 - 9/30&lt;/li&gt;
+          &lt;li&gt;总结项目成果，项目经验，准备结项材料&lt;/li&gt;
+          &lt;li&gt;无&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;项目链接：
+  &lt;a href=&quot;https://github.com/wechaty/matrix-appservice-wechaty&quot;&gt;matrix-appservice-wechaty&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;联系方式：
+    &lt;ul&gt;
+      &lt;li&gt;林宇靖：545641826@qq.com&lt;/li&gt;
+      &lt;li&gt;张瑞宁：3134191406@qq.com&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分工合作:
+    &lt;ul&gt;
+      &lt;li&gt;分工：林宇靖同学需主要负责项目功能实现和gitlab项目维护，张瑞宁主要同学负责代码审查和gitlab项目维护。共同撰写中英文文档&lt;/li&gt;
+      &lt;li&gt;证书：保证张瑞宁同学证书署名的情况下，尽量加上林宇靖同学的名字&lt;/li&gt;
+      &lt;li&gt;津贴分配：林宇靖同学:张瑞宁同学=3:1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>zrn-fight</name></author><category term="project" /><category term="ospp" /><category term="matrix" /><category term="summer-of-wechaty" /><category term="ecosystem" /><category term="summer-2021" /><category term="ospp" /><category term="ospp-2021" /><category term="plan" /><summary type="html">Author:@Rhyme @zrn-fight</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-matrix/wechaty-matrix-plan.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-matrix/wechaty-matrix-plan.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OSPP 2021-期初报告-基于 Itchat 为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet</title><link href="https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-itchat-puppet/" rel="alternate" type="text/html" title="OSPP 2021-期初报告-基于 Itchat 为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet" /><published>2021-07-13T00:00:00+00:00</published><updated>2021-07-13T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-itchat-puppet</id><content type="html" xml:base="https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-itchat-puppet/">&lt;blockquote&gt;
+  &lt;p&gt;Author:&lt;a href=&quot;https://github.com/lyleshaw&quot;&gt;@lyleshaw&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;暑期2021&quot;&gt;暑期2021&lt;/h2&gt;
+
+&lt;p&gt;“开源软件供应链点亮计划-暑期2021”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。
+旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。
+根据项目的难易程度和完成情况，参与者还可获取“开源软件供应链点亮计划-暑期2021”活动奖金和奖杯。
+官网：&lt;a href=&quot;https://summer.iscas.ac.cn/&quot;&gt;https://summer.iscas.ac.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本项目 [基于 Itchat 为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet] 系 暑期2021 支持的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目介绍&quot;&gt;项目介绍&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;项目名称：基于 Itchat 为 Python Wechaty 实现社区首个 Python 语言的本地 Puppet&lt;/li&gt;
+  &lt;li&gt;导师：吴京京、李卓桓&lt;/li&gt;
+  &lt;li&gt;学生：肖良玉&lt;/li&gt;
+  &lt;li&gt;项目链接：&lt;a href=&quot;https://github.com/lyleshaw/python-wechaty-puppet-itchat&quot;&gt;https://github.com/lyleshaw/python-wechaty-puppet-itchat&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;详细方案&quot;&gt;详细方案&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;L0阶段：
+    &lt;ul&gt;
+      &lt;li&gt;预期效果：
+熟悉 Itchat 的各项 API ；熟悉 Wechaty Puppet 的开发流程；创建python-wechaty-puppet-itchat的repository。&lt;/li&gt;
+      &lt;li&gt;实施方案：
+阅读 Itchat 文档，了解 Wechaty Puppet。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;L1阶段：
+    &lt;ul&gt;
+      &lt;li&gt;预期效果：
+完成python-wechaty-puppet-itchat 的登录与初始化部分的实现；完成 ding-dong-bot 的实现。&lt;/li&gt;
+      &lt;li&gt;实施方案：
+了解 python-wechaty-puppet-service 是如何通过gRPC 与远程服务器通讯的，并结合 Itchat 的设计模式，对比二者异同，思考如何将 Itchat 的函数封装进 wechaty- puppet，思考 wechaty-puppet 的哪些代码对于该项目而言是不必要的，并完成对 Itchat 中 auto_login 函数的封装。
+在此基础上深入了解 Itchat msg_register 函数的实现方法，并在此基础上封装进 wechaty-puppet，同时完成发送消息函数的封装。同时参考其他 wechaty-puppet 完成 ding-dong-bot.py 并使其能正常运行。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;L2阶段：
+    &lt;ul&gt;
+      &lt;li&gt;预期效果：
+配置 GitHub Action 实现 python-wechaty-puppet-itchat 自动发布到 Pypi 并完成自动化测试。&lt;/li&gt;
+      &lt;li&gt;实施方案：
+了解 Pypi 的发布流程，并在参考已有GitHub Action 配置文件的基础上完成自动发布的流程，同时完成自动化测试。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;L3阶段：
+    &lt;ul&gt;
+      &lt;li&gt;预期效果：
+使用 Itchat 的 API 为 python-wechaty-puppet-itchat 实现User 和 Room 部分的功能。&lt;/li&gt;
+      &lt;li&gt;实施方案：
+在该阶段，我计划深入了解 Itchat 关于 User 部分的 get_contact 等函数的实现，封装为 Wechaty 的 User相关模块的功能。同时将 Itchat create_chatroom等函数封装为 Wechaty Room 模块的功能。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;L4阶段：
+    &lt;ul&gt;
+      &lt;li&gt;预期效果：
+为 python-wechaty-puppet-itchat 实现Itchat 的其他功能。&lt;/li&gt;
+      &lt;li&gt;实施方案：
+在该阶段，我计划将 Itchat 剩余的接口根据 Wechaty 的代码风格封装进 python-wechaty-puppet-itchat。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;*L5阶段：
+    &lt;ul&gt;
+      &lt;li&gt;预期效果：
+完善 python-wechaty 文档。&lt;/li&gt;
+      &lt;li&gt;实施方案：
+在了解 python-wechaty 的基础上，我计划在 python-wechaty 原有文档的基础上进行完善和补充。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;项目开发时间计划&quot;&gt;项目开发时间计划&lt;/h2&gt;
+
+&lt;h3 id=&quot;第一阶段7月-8月&quot;&gt;第一阶段（7月-8月）&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;L0阶段开发 5天&lt;/li&gt;
+  &lt;li&gt;L1阶段开发 10天&lt;/li&gt;
+  &lt;li&gt;L2阶段开发 20天&lt;/li&gt;
+  &lt;li&gt;中期验收&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;第二阶段8月-10月&quot;&gt;第二阶段（8月-10月）&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;L3阶段开发 10天&lt;/li&gt;
+  &lt;li&gt;L4阶段开发 15天&lt;/li&gt;
+  &lt;li&gt;L5阶段开发 15天&lt;/li&gt;
+  &lt;li&gt;结项验收&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>lyleshaw</name></author><category term="project" /><category term="ospp" /><category term="itchat" /><category term="puppet" /><category term="summer-of-wechaty" /><category term="summer-2021" /><category term="ecosystem" /><category term="ospp" /><category term="ospp-2021" /><category term="plan" /><summary type="html">Author:@lyleshaw</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-itchat-puppet/python-wechaty-puppet-itchat.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-itchat-puppet/python-wechaty-puppet-itchat.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OSPP 2021-期初报告-基于 Wechaty 开发开源的二师兄社群逗乐机器人</title><link href="https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-piggy-bro/" rel="alternate" type="text/html" title="OSPP 2021-期初报告-基于 Wechaty 开发开源的二师兄社群逗乐机器人" /><published>2021-07-13T00:00:00+00:00</published><updated>2021-07-13T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-piggy-bro</id><content type="html" xml:base="https://wechaty.js.org/2021/07/13/ospp-plan-wechaty-piggy-bro/">&lt;blockquote&gt;
+  &lt;p&gt;Author: &lt;a href=&quot;https://github.com/ReiKohaku&quot;&gt;@ReiKohaku&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;暑期2021&quot;&gt;暑期2021&lt;/h2&gt;
+
+&lt;p&gt;“开源软件供应链点亮计划-暑期2021”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。
+旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。
+根据项目的难易程度和完成情况，参与者还可获取“开源软件供应链点亮计划-暑期2021”活动奖金和奖杯。
+官网：&lt;a href=&quot;https://summer.iscas.ac.cn/&quot;&gt;https://summer.iscas.ac.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本项目 [基于 Wechaty 开发开源的二师兄社群逗乐机器人] 系 暑期2021 支持的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目介绍&quot;&gt;项目介绍&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;项目名称：基于 Wechaty 开发开源的二师兄社群逗乐机器人&lt;/li&gt;
+  &lt;li&gt;导师：韩磊、鲁玉超、王玉丹&lt;/li&gt;
+  &lt;li&gt;学生：井维嘉&lt;/li&gt;
+  &lt;li&gt;模块列表
+    &lt;ul&gt;
+      &lt;li&gt;可扩展式开发框架&lt;/li&gt;
+      &lt;li&gt;讲笑话、成语接龙、猜图片、猜歌名等功能&lt;/li&gt;
+      &lt;li&gt;二师兄Logo及形象&lt;/li&gt;
+      &lt;li&gt;二师兄后花园&lt;/li&gt;
+      &lt;li&gt;使用、部署与开发文档&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;项目要求：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/83&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/83&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;项目链接：&lt;a href=&quot;https://github.com/ReiKohaku/piggy-bro&quot;&gt;https://github.com/ReiKohaku/piggy-bro&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;开发方案&quot;&gt;开发方案&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;任务要求
+基于 Wechaty 开发机器人，实现讲笑话、成语接龙、猜图片、猜歌名、查航班、查天气、微博爆款热搜提醒等功能；并设计Logo及形象；开发二师兄后花园。&lt;/li&gt;
+  &lt;li&gt;实现方案
+利用 Wechaty 特性，实现一个简单的可扩展式脚手架，模块化实现各项功能。之后收集高可用API，实现要求的功能。后花园使用 Node.js + Vue 的开发模式，实现一个简单的小游戏。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;开发时间计划&quot;&gt;开发时间计划&lt;/h2&gt;
+
+&lt;h3 id=&quot;二师兄机器人开发7月&quot;&gt;二师兄机器人开发（7月）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;开发可扩展式开发框架（7.1-7.7）&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;熟悉Wechaty开发模式&lt;/li&gt;
+      &lt;li&gt;搭建二师兄开发脚手架&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;具体功能实现（7.8-7.30）&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;初步实现要求中的具体功能，可能包括且不限于：讲笑话、看热搜、查天气、成语接龙、猜图片、猜歌名&lt;/li&gt;
+      &lt;li&gt;初步编写相关功能API的注册与部署文档&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;二师兄周边设计8月&quot;&gt;二师兄周边设计（8月）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;设计二师兄Logo及形象（8.1-8.7）
+    &lt;ul&gt;
+      &lt;li&gt;为二师兄的Logo和形象做出初步描述&lt;/li&gt;
+      &lt;li&gt;Logo及形象定稿&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;开发二师兄后花园（8.8-8.30）
+    &lt;ul&gt;
+      &lt;li&gt;设计后花园游玩流程及各项数值&lt;/li&gt;
+      &lt;li&gt;搭建二师兄后花园服务及页面&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;收尾工作9月&quot;&gt;收尾工作（9月）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;编写文档与完善功能（9.1-9.30）
+    &lt;ul&gt;
+      &lt;li&gt;编写使用、部署及开发文档&lt;/li&gt;
+      &lt;li&gt;整理代码并完善功能&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;其它&quot;&gt;其它&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;联系方式：&lt;/p&gt;
+
+    &lt;p&gt;微信：ReiKohaku
+E-mail：hbsjzjwj@163.com&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>reikohaku</name></author><category term="project" /><category term="ospp" /><category term="chat" /><category term="summer-of-wechaty" /><category term="summer-2021" /><category term="ecosystem" /><category term="ospp" /><category term="ospp-2021" /><category term="plan" /><summary type="html">Author: @ReiKohaku</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-piggy-bro/wechaty-logo.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-plan-wechaty-piggy-bro/wechaty-logo.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">全新的Windows puppet项目wechaty-puppet-xp启动</title><link href="https://wechaty.js.org/2021/07/13/wechaty-puppet-xp-start-up/" rel="alternate" type="text/html" title="全新的Windows puppet项目wechaty-puppet-xp启动" /><published>2021-07-13T00:00:00+00:00</published><updated>2021-07-13T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/13/wechaty-puppet-xp-start-up</id><content type="html" xml:base="https://wechaty.js.org/2021/07/13/wechaty-puppet-xp-start-up/">&lt;blockquote&gt;
+  &lt;p&gt;作者: &lt;a href=&quot;https://github.com/atorber/&quot;&gt;atorber&lt;/a&gt;，酷爱编码的的产品经理&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;7月13日，周二，我们组织了一个小范围的 Wechaty Contributor 线下聚会。&lt;/p&gt;
+
+&lt;p&gt;之前预告的&lt;a href=&quot;https://wechaty.js.org/2021/07/05/puppet-laozhang-wechat-bot/&quot;&gt;《喜讯：使用Windows微信桌面版协议登录，wechaty免费版协议即将登场》&lt;/a&gt;主角诗人老张飞临北京，期待已久的聚会终能成行。&lt;/p&gt;
+
+&lt;p&gt;也借由此次相聚，大家期待的wechaty-Windows协议免费wechaty-puppet-xp项目正式启动。&lt;/p&gt;
+
+&lt;p&gt;超哥由于打工人的原因，身不由己，在下工后姗姗来迟，赶到时主要议题已接近尾声。直接说议题产出：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/cixingguangming55555&quot;&gt;@老张&lt;/a&gt;介绍了 &lt;a href=&quot;https://github.com/cixingguangming55555/wechat-bot&quot;&gt;laozhang-chat-bot开源项目&lt;/a&gt; 的缘起，因为工作中的一个自动化通知场景业务需求决定动手自己做了一个wechat bot。后来觉得这个技术对对家有用，开源了出来，目前几个微信群有500+开发者参与讨论和使用。此次能够与wechaty结合来打造一个更加易用、完善的chatbot非常高兴。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/huan&quot;&gt;@huan&lt;/a&gt;介绍了wechaty-puppet的技术实现及演示了基于老张的chat-bot结合wechaty实现ding-dong-bot的demo。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;大家进一步聊了新的puppet的规划和发展，并群策群力为我们的“wechaty-puppet-laozhang”取了一个全新的名字wechaty-puppet-xp，未来将由老张主导开启xp项目的完善。&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/2021/07-wechaty-puppet-xp-start-up/awjiy-xpvlz.webp&quot; alt=&quot;rare-book.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;最后大家把酒言欢畅谈技术、生活。&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/2021/07-wechaty-puppet-xp-start-up/athob-fx113.webp&quot; alt=&quot;rare-book.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这里也预告一下，第一个版本的wechaty-puppet-xp将于近期发布，让大家尽快体验。&lt;/p&gt;
+
+&lt;p&gt;同时也请感兴趣的开发者关注和加入&lt;a href=&quot;https://github.com/wechaty/wechaty-puppet-xp&quot;&gt;wechaty-puppet-xp&lt;/a&gt;项目。&lt;/p&gt;
+
+&lt;p&gt;与会者介绍:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/huan&quot;&gt;@huan&lt;/a&gt;, &lt;a href=&quot;https://wechaty.js.org/contributors/huan&quot;&gt;Huan LI&lt;/a&gt;, Tencent TVP of Chatbot, &amp;lt;zixia@zixia.net&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lijiarui&quot;&gt;@lijiarui&lt;/a&gt;: Full stack developer, serial entrepreneur, Founder &amp;amp; CEO of JuziBot&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/windmemory&quot;&gt;@gaoyuan&lt;/a&gt;: Founder &amp;amp; CTO of JuziBot&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/cixingguangming55555&quot;&gt;@cixingguangming55555&lt;/a&gt;: Wechaty Padlocal xp&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/atorber&quot;&gt;@atorber&lt;/a&gt;: Groupmaster Wechat Miniprogram&lt;/p&gt;</content><author><name>atorber</name></author><category term="story" /><category term="meetup" /><category term="xp" /><summary type="html">作者: atorber，酷爱编码的的产品经理</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-wechaty-puppet-xp-start-up/ad3tu-yqj3u.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-wechaty-puppet-xp-start-up/ad3tu-yqj3u.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">OSPP 2021-期初报告-开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块</title><link href="https://wechaty.js.org/2021/07/11/ospp-plan-qq-puppet/" rel="alternate" type="text/html" title="OSPP 2021-期初报告-开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块" /><published>2021-07-11T00:00:00+00:00</published><updated>2021-07-11T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/11/ospp-plan-qq-puppet</id><content type="html" xml:base="https://wechaty.js.org/2021/07/11/ospp-plan-qq-puppet/">&lt;blockquote&gt;
+  &lt;p&gt;Author:&lt;a href=&quot;https://github.com/anaivebird&quot;&gt;@anaivebird&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;暑期2021&quot;&gt;暑期2021&lt;/h2&gt;
+
+&lt;p&gt;“开源软件供应链点亮计划-暑期2021”（以下简称 暑期2021）是由中科院软件所与 openEuler 社区共同举办的一项面向高校学生的暑期活动。
+旨在鼓励在校学生积极参与开源软件的开发维护，促进国内优秀开源软件社区的蓬勃发展。
+根据项目的难易程度和完成情况，参与者还可获取“开源软件供应链点亮计划-暑期2021”活动奖金和奖杯。
+官网：&lt;a href=&quot;https://summer.iscas.ac.cn/&quot;&gt;https://summer.iscas.ac.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本项目 [开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块] 系 暑期2021 支持的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目介绍&quot;&gt;项目介绍&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;项目名称：开发支持 QQ 聊天软件的 Wechaty Puppet Provider 模块&lt;/li&gt;
+  &lt;li&gt;导师：李佳芮、李卓桓&lt;/li&gt;
+  &lt;li&gt;学生：anaivebird&lt;/li&gt;
+  &lt;li&gt;模块列表
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;node.js qq protocol client implement(based on &lt;a href=&quot;https://github.com/takayama-lily/oicq&quot;&gt;takayama-lily/oicq&lt;/a&gt;)&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Puppeteer&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;puppet for qq wrapper&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;滑块登陆&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;设备信息存储&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;项目链接：&lt;a href=&quot;https://github.com/wechaty/summer-of-wechaty/issues/81&quot;&gt;https://github.com/wechaty/summer-of-wechaty/issues/81&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;详细方案&quot;&gt;详细方案&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;任务要求&lt;br /&gt;
+使用 &lt;a href=&quot;https://github.com/wechaty/wechaty-puppet-mock&quot;&gt;wechaty-puppet-mock&lt;/a&gt; 项目作为模版，参考社区其他的 Wechaty Puppet Provider 代码模块，对 QQ 进行规划、RPA选型、原型测试，和最终的代码封装。&lt;br /&gt;
+在初期开发中，能够实现文本消息的接收和发送，即可完成原型验证 POC 。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;实现方案&lt;br /&gt;
+通过对Wechaty Puppet Provider和wechaty-puppet-mock项目等进行了解和学习，并对已有项目进行梳理，多和导师进行沟通，实现通过 Wechaty 加载 wechaty-puppet-qq模块，并包装&lt;a href=&quot;https://github.com/takayama-lily/oicq&quot;&gt;oicq&lt;/a&gt;项目，实现文本消息的收发功能，提供一个 examples/ding-dong-bot.ts ，完成“接收到文字消息ding时，自动回复消息dong”等功能。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;项目开发时间计划&quot;&gt;项目开发时间计划&lt;/h2&gt;
+
+&lt;h3 id=&quot;第一阶段7月-8月&quot;&gt;第一阶段（7月-8月）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;7.1-7.10&lt;br /&gt;
+先和导师沟通，并观看Wechaty Puppet Provider 的 workshop 视频，熟悉Wechaty Puppet Provider的业务流程，并对自己目前还没有掌握的nodejs、npm、typescript等内容进行快速的了解和学习，对时间安排做好具体的规划&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;7.11-8.15&lt;br /&gt;
+开始正式进行代码的prototyping，先完成基础的功能，完成通过 Wechaty 加载 wechaty-puppet-5g-qq 模块，并通过oicq项目实现的qq协议，实现文本消息的收发功能。每周协同导师进行功能的开发和完善&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;第二阶段8月-10月&quot;&gt;第二阶段（8月-10月）&lt;/h3&gt;
+
+&lt;p&gt;在现有基础上，滑动验证码登陆、设备锁、qq登陆风控等问题进行调研和排查&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;8.16-9.30&lt;br /&gt;
+继续完善功能，完成“接收到文字消息ding时，自动回复消息dong”的功能，不断总结和完善功能列表。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;10.1-10.30&lt;br /&gt;
+如果还有功能模块未完成则继续优化代码，梳理项目，如果时间充足，可以尝试完成一下配置 GitHub Actions 实现自动化测试的任务。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>anaivebird</name></author><category term="project" /><category term="ospp" /><category term="qq" /><category term="puppet" /><category term="summer-of-wechaty" /><category term="summer-2021" /><category term="ecosystem" /><category term="ospp" /><category term="ospp-2021" /><category term="plan" /><summary type="html">Author:@anaivebird</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-ospp-plan-qq-puppet/wechaty-qq-puppet-logo.webp" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-ospp-plan-qq-puppet/wechaty-qq-puppet-logo.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI Chatbot Competition – Metaverse启动机之重构现世！</title><link href="https://wechaty.js.org/2021/07/07/wechaty-with-paddlepaddle/" rel="alternate" type="text/html" title="AI Chatbot Competition – Metaverse启动机之重构现世！" /><published>2021-07-07T00:00:00+00:00</published><updated>2021-07-07T00:00:00+00:00</updated><id>https://wechaty.js.org/2021/07/07/wechaty-with-paddlepaddle</id><content type="html" xml:base="https://wechaty.js.org/2021/07/07/wechaty-with-paddlepaddle/">&lt;p&gt;硬核ML Chatbot 大赛重磅来袭!
+由Wechaty、PaddlePaddle和Mixlab联合主办，未来事务管理局作为媒体支持的「AI创造营 ：Metaverse启动机之重构现世」ML Chatbot 大赛正式启动！&lt;/p&gt;
+
+&lt;p&gt;Metaverse元宇宙的奥秘，等你来揭晓！
+我们向所有科幻爱好者发出邀约！
+期待“你”充分开发自己的脑洞，借助飞桨PaddlePaddle技术，构建未来世界的超级Chatbot。&lt;/p&gt;
+
+&lt;h2 id=&quot;-惊喜奖品大揭秘&quot;&gt;🌟 惊喜奖品大揭秘!🌟&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/07-wechaty-with-paddlepaddle/prize.png&quot; alt=&quot;prize&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;-更多比赛福利&quot;&gt;✨ 更多比赛福利!✨&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;报名即送GPU算力+wechaty token&lt;/li&gt;
+  &lt;li&gt;优秀项目官方送你出道&lt;/li&gt;
+  &lt;li&gt;Paddle &amp;amp; Wechaty工程师1对1指导&lt;/li&gt;
+  &lt;li&gt;PPDE(飞桨开发者技术专家)绿色通道&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021/07-wechaty-with-paddlepaddle/qr.png&quot; alt=&quot;qr&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;扫码报名，马上获取比赛福利!&lt;/p&gt;
+
+&lt;h3 id=&quot;往期作品回顾ai创造营&quot;&gt;往期作品回顾「AI创造营」&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AI创造营是百度大脑AI Studio平台举办的系列创意赛，目前已成功举办两期，涌现出许多好玩有趣的AI创意项目，精彩内容请往下看！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;《新一代超能力：隔空取物》当前累计star数 248+。有了Paddle Paddle技术的加持，偶像爱豆的照片统统可以“贴”在电脑桌面上，陪你看剧听歌工作。
+&lt;img src=&quot;/assets/2021/07-wechaty-with-paddlepaddle/pic_mask.gif&quot; alt=&quot;pic_mask&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;《未来流浪者》已累计近200 star，是一个基于PaddleHub、Wechaty与彩云小梦的科幻机器人，可以实现未来旅行者跟人类的互动，即时发送位置、照片和游记等。
+&lt;img src=&quot;/assets/2021/07-wechaty-with-paddlepaddle/wanderer.gif&quot; alt=&quot;wanderer&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;《BotBay专属机器人小助手》是以生物多样性为命题的机器人赋能平台，采用一入口(微信)，一平台(botPlatform)，多支撑(PaddleWorkers)的模式进行设计与开发，借比赛实现自己的科幻梦想。
+&lt;img src=&quot;/assets/2021/07-wechaty-with-paddlepaddle/botbay.gif&quot; alt=&quot;botbay&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;《熊猫头表情生成器》是一个可以生成个人专属熊猫头表情包的聊天机器人，个性化聊天内容由你来掌控。!
+&lt;img src=&quot;/assets/2021/07-wechaty-with-paddlepaddle/panda_emoji.gif&quot; alt=&quot;panda_emoji&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;创意赛直播讲解&quot;&gt;创意赛直播讲解&lt;/h3&gt;
+
+&lt;p&gt;7月13日19:00-20:00，锁定飞桨直播间，飞桨模型教学&amp;amp;Wechaty使用说明&amp;amp;创意思路引导，统统满足你！无论是刚入门人工智能的初阶选手、还是没接触过Wechaty的小白用户都可以大胆参赛！直播最后还有互动交流环节，讲师现场答疑解惑。&lt;/p&gt;
+
+&lt;h3 id=&quot;线下脑暴创意大比拼&quot;&gt;线下脑暴创意大比拼&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;7月18日：上海场线下脑暴会&lt;/li&gt;
+  &lt;li&gt;7月25日：北京场线下脑暴会&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;现场名额有限，赶快入群获取报名链接吧！
+&lt;img src=&quot;/assets/2021/07-wechaty-with-paddlepaddle/qrcode.png&quot; alt=&quot;qrcode&quot; /&gt;&lt;/p&gt;</content><author><name>valerieeeee</name></author><category term="article" /><category term="baidu" /><category term="ai" /><category term="news" /><category term="featured" /><category term="chatbot" /><category term="competition" /><summary type="html">硬核ML Chatbot 大赛重磅来袭! 由Wechaty、PaddlePaddle和Mixlab联合主办，未来事务管理局作为媒体支持的「AI创造营 ：Metaverse启动机之重构现世」ML Chatbot 大赛正式启动！</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://wechaty.js.org/assets/2021/07-wechaty-with-paddlepaddle/header.png" /><media:content medium="image" url="https://wechaty.js.org/assets/2021/07-wechaty-with-paddlepaddle/header.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
